@@ -61,7 +61,11 @@ export function Quiz() {
   const [answers, setAnswers] = useState<string[]>([]);
   const [showResult, setShowResult] = useState(false);
 
-  const shuffle = (array: any[]) => {
+  interface Option {
+    label: string;
+    animal: string;
+  }
+  const shuffle = (array: Option[]) => {
     const newArr = [...array];
     for (let i = newArr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
